@@ -70,4 +70,15 @@ public class MathUtilsTest {
         //if  assumeTrue(isServerUp) is true assertThrows() is going to work
         assertThrows(ArithmeticException.class, () -> mathUtils.divide(1, 0));
     }
+
+    @Test
+    @DisplayName("Test more than one multiply method with assertAll()")
+    void testAllMultiplyCases() {
+        // if one fail all are going to fail
+        assertAll(
+                () -> assertEquals(4, mathUtils.multiply(2, 2)),
+                () -> assertEquals(0, mathUtils.multiply(2, 0)),
+                () -> assertEquals(-2, mathUtils.multiply(2, -1))
+        );
+    }
 }
