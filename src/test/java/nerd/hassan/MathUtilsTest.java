@@ -81,4 +81,18 @@ public class MathUtilsTest {
                 () -> assertEquals(-2, mathUtils.multiply(2, -1))
         );
     }
+    // away to group related tests
+    @Nested
+    class AddTest{
+        @Test
+        @DisplayName("Testing add methode for positive number")
+        void testAddPositiveNumber(){
+            assertEquals(2,mathUtils.add(1,1),"This methode should add to positive num");
+        }
+        @Test
+        @DisplayName("Testing add methode for positive number")
+        void testAddNegativeNumber(){
+            assertEquals(-2,mathUtils.add(-1,-1),"This methode should add to negative num");
+        }
+    }
 }
