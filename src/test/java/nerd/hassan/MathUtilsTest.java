@@ -39,6 +39,7 @@ public class MathUtilsTest {
     }
 
     @Test
+    @Tag("Math")
     void testDivide() {
         assertThrows(ArithmeticException.class, () -> mathUtils.divide(1, 0), "if /0 throw ex");
     }
@@ -50,12 +51,14 @@ public class MathUtilsTest {
 
     @Test
     @Disabled
+    @Tag("TDD")
     @DisplayName("TDD test disabled")
     void testDrivenDevelopment() {
         fail("it is going to fail");
     }
 
     @Test
+    @Tag("OS")
     @EnabledOnOs(OS.LINUX)
     @DisplayName("Run only on LINUX")
     void conditionalExecutionsTest() {
@@ -84,6 +87,7 @@ public class MathUtilsTest {
 
     // away to group related tests
     @Nested
+    @Tag("Math")
     class AddTest {
         @Test
         @DisplayName("Testing add methode for positive number")
